@@ -1,0 +1,24 @@
+There are 3 ways to create a 3d instance:
+1) from the 'Add object' menu - a mesh(with a three geometry) with wireframe, later might include drawn objects*
+2) from 'settings'(import object) menu or 'ready objects' menu - a THREE.Object3D with numerous children - pairs of meshes and corresponding wireframes
+3) from the 'draw' in 'settings' menu - can be point / line / mesh - a THREE Points/Line2/ConvexGeometry with a parent, which is either the scene or an instance of 1)
+
+Hover
+	if an object is hovered its color will change to slightly lighter (using the .Color property as infoormation source)
+	if the parent of a 3) is hovered the 3) will change color
+
+updateGroupGeometry()
+	every time a 1) or 3) is altered, the change is handled here including at creation
+
+updateDrawnObject()
+	when the parent of a point of a 3) is moved/rotated, the said vertice is displaced as well => the 3) gets altered
+
+createObject()
+	function for correct changing of the geometry and using updateGroupGeometry + making the gui of the object
+
+init()
+	the plane is for easier movement of objects and correct position of mouse in the 3d plane
+
+fileIsLocal
+	if the file is downloaded there will be the version and defaultFont variables
+	it is automatically updated with the online version at first click

@@ -3,7 +3,7 @@ const fs = require('fs');
 
 const {serveStaticFiles, requestDecoder} = require('./My helpers/helpers');
 const {version} = require('./package.json');
-const thisUrl = 'https://geometry-3d.herokuapp.com/'
+const thisUrl = 'https://geometry-3d.herokuapp.com/';
 
 const server = http.createServer((req, res) => {
 	res.setHeader('Access-Control-Allow-Origin' , '*');
