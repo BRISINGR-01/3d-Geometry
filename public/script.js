@@ -2615,12 +2615,11 @@ function objDataFolders(folder, data, generateGeometry, type) {
         if (values.names && values.names[key]) newController.name(values.names[key])
     };
 }
-function irregularFolders(folder, data, generateGeometry, isIrregular){
+function irregularFolders(folder, data, generateGeometry){
     const irregularFolder = folder.addFolder('Irregular');
     if (data.type !== 'ParametricGeometry') irregularFolder.add( data, 'x', 0, 3).onChange( generateGeometry );
     if (data.type !== 'ParametricGeometry') irregularFolder.add( data, 'y', 0, 3).onChange( generateGeometry );
     if (data.type !== 'ParametricGeometry') irregularFolder.add( data, 'z', 0, 3).onChange( generateGeometry );
-    if (!isIrregular) return;
     irregularFolder.add( data, 'tiltX', -90, 90 ).onChange( generateGeometry ).name('tilt X');
     irregularFolder.add( data, 'tiltZ', -90, 90 ).onChange( generateGeometry ).name('tilt Z');
     irregularFolder.add( data, 'moveX', -90, 90 ).onChange( generateGeometry ).name('move X');
